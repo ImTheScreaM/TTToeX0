@@ -35,7 +35,7 @@ function clickPlayer() {
     let data = []
 
     if (!this.innerHTML) {
-        this.innerHTML = player;      
+        this.innerHTML = player;
     }else {
         alert("Error cell full");
         return;
