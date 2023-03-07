@@ -1,6 +1,6 @@
 let area = document.getElementById('map');
 let cell = document.getElementsByClassName('cell');
-let currentPlayer = document.getElementById('curPlyr')
+let currentPlayer = document.getElementById('cur-plyr')
 
 // Player , WinArr and StatPlayer \\
 
