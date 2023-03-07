@@ -99,7 +99,7 @@ function restart(text) {
 // Update Stats \\
 
 function newStat() {
-    document.getElementById('stats__cross').innerHTML = stat.x
-    document.getElementById('stats__zero').innerHTML = stat.o
-    document.getElementById('stats__draw').innerHTML = stat.d
+    document.getElementById('stats-cross').innerHTML = stat.x
+    document.getElementById('stats-zero').innerHTML = stat.o
+    document.getElementById('stats-draw').innerHTML = stat.d
 }
