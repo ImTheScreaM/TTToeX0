@@ -2,10 +2,10 @@ let area = document.getElementById('map');
 let cell = document.getElementsByClassName('cell');
 let currentPlayer = document.getElementById('cur-plyr')
 
-// Player , WinArr and StatPlayer \\
+// player , win array and player stats
 
 let player = "x"
-let stat = {
+let stats = {
     'x' : 0,
     'o' : 0,
     'd' : 0
@@ -22,17 +22,16 @@ let winArr = [
 ]
 
 for (let i = 1; i <= 9 ; i++) {
-    area.innerHTML += "<div class='cell' pos=" + i + "></div>";
+    area.innerHTML += `<div class='cell' pos=${i}></div>`;
 }
 
 for (let i = 0 ;i < cell.length; i++) {
-    cell[i].addEventListener('click', cellClick ,false);
+    cell[i].addEventListener('click', clickPlayer ,false);
 }
 
-// ClickPlayer \\
+// click player
 
-function cellClick() {
-
+function clickPlayer() {
     let data = []
 
     if (!this.innerHTML) {
@@ -49,7 +48,7 @@ function cellClick() {
     }
 
     if(checkWin(data)) {
-        stat[player] += 1;
+        stats[player] += 1;
         restart('Win ' + player)
     } else {
         let draw = true
@@ -57,16 +56,16 @@ function cellClick() {
             if (cell[i].innerHTML == '') draw = false;
         }
         if (draw) {
-            stat.d += 1
+            stats.d += 1
             restart("Draw")
         }
     }
 
-    player = player == "x" ? "o" : "x"
+    player = player == 'x' ? 'o' : 'x'
     currentPlayer.innerHTML = player.toUpperCase()
 }
 
-// CheckWin \\
+// cheking win
 
 function checkWin(data) {
     for (let i in winArr) {
@@ -85,21 +84,21 @@ function checkWin(data) {
     return false;
 }
 
-// Restart \\
+// restart game
 
 function restart(text) {
-    console.log(stat)
+    console.log(stats)
     alert(text)
     for (let i = 0; i < cell.length; i++) {
         cell[i].innerHTML = ''
     }
-    newStat()
+    updateStats()
 }
 
-// Update Stats \\
+// update stats
 
-function newStat() {
-    document.getElementById('stats-cross').innerHTML = stat.x
-    document.getElementById('stats-zero').innerHTML = stat.o
-    document.getElementById('stats-draw').innerHTML = stat.d
+function updateStats() {
+    document.getElementById('stats-cross').innerHTML = stats.x
+    document.getElementById('stats-zero').innerHTML = stats.o
+    document.getElementById('stats-draw').innerHTML = stats.d
 }

@@ -1,17 +1,16 @@
-* {margin: 0; padding: 0;}
-
-.content {
-    display: flex;
-    margin: 100px 50px 50px 50px;
-    font-family: sans-serif;
+* {
+    margin: 0; padding: 0;
 }
 
-#map {
-    position: absolute;
-    top: 40%;
-    left: 46%;
-    width: 156px;
-    font-size: 0;
+.container-game {
+    display: grid;
+    grid: repeat(2, 60px) / auto-flow 350px;
+    justify-content: center;
+    transform: translateY(300px);
+}
+
+.current-player {
+    font-size: 36px;
 }
 
 .cell {
@@ -27,31 +26,9 @@
     transition: background .1s;
 }
 
-.cell:hover {
-    background-color: #F1F1F1;
-}
-
-.current-player {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    width: auto;
-    font-size: 36px;
-    top: 35%;
-    left: 29%;
-}
-
-.stats-player {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    top: 41%;
-    left: 29%;
-}
-
-.stats-player table {
-    border-collapse: collapse;
+#map {
+    margin: 50px 0px 0px 0px;
+    width: 200px;
 }
 
 .stats-player table, .stats-player th, .stats-player td {

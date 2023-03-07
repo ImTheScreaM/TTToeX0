@@ -8,30 +8,35 @@
   <title>0x</title>
 </head>
 <body> 
-  
-  <div class="current-player">
-    <span>Сейчас ходит: <span id="cur-plyr">X</span></span>
-  </div>
-  <div id="map"></div>
 
-  <div class="stats-player">
-    <table>
-      <th colspan="2">Stats</th>
-      <tr>
+  <div class="container-game">
+    <div class="current-player">
+      <span>Сейчас ходит: <span id="cur-plyr">X</span></span>
+    </div>
+    <div class="stats-player">
+      <table>
+        <th colspan="2">Stats</th>
+        <tr>
           <td>X</td>
           <td><span id="stats-cross">0</span></td>
-      </tr>
-      <tr>
-          <td>O</td>
-          <td><span id="stats-zero">0</span></td>
-      </tr>
-      <tr>
+        </tr>
+        <tr>
+            <td>O</td>
+            <td><span id="stats-zero">0</span></td>
+          </tr>
+        <tr>
           <td>Draw</td>
           <td><span id="stats-draw">0</span></td>
-      </tr>
-    </table>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <div id="map"></div>     
+    </div>
   </div>
+  
 
-  <script src="/script.js"></script>
+
+  <script src="./script.js"></script>
 </body>
 </html>
