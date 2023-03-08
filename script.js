@@ -1,13 +1,13 @@
 let area = document.getElementById('map');
 let cell = document.getElementsByClassName('cell');
-let currentPlayer = document.getElementById('cur-plyr')
+let currentPlayer = document.getElementById('cur-plyr');
 
 // player , win array and player stats
 
-let player = "x"
+let player = "X"
 let stats = {
-    'x' : 0,
-    'o' : 0,
+    'X' : 0,
+    'O' : 0,
     'd' : 0
 }
 let winArr = [
@@ -49,7 +49,7 @@ function clickPlayer() {
 
     if(checkWin(data)) {
         stats[player] += 1;
-        restart('Win ' + player)
+        restart(`Win ${player}`)
     } else {
         let draw = true
         for (let i in cell) {
@@ -61,7 +61,7 @@ function clickPlayer() {
         }
     }
 
-    player = player == 'x' ? 'o' : 'x'
+    player = player == 'X' ? 'O' : 'X'
     currentPlayer.innerHTML = player.toUpperCase()
 }
 
@@ -87,7 +87,6 @@ function checkWin(data) {
 // restart game
 
 function restart(text) {
-    console.log(stats)
     alert(text)
     for (let i = 0; i < cell.length; i++) {
         cell[i].innerHTML = ''
@@ -98,7 +97,7 @@ function restart(text) {
 // update stats
 
 function updateStats() {
-    document.getElementById('stats-cross').innerHTML = stats.x
-    document.getElementById('stats-zero').innerHTML = stats.o
+    document.getElementById('stats-cross').innerHTML = stats.X
+    document.getElementById('stats-zero').innerHTML = stats.O
     document.getElementById('stats-draw').innerHTML = stats.d
 }
